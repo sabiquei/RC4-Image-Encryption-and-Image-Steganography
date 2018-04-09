@@ -56,4 +56,4 @@ def run_without_ui():
             print"Invalid choice\n" \
                  "Please give another input"
 
-run_without_ui()
+#run_without_ui()

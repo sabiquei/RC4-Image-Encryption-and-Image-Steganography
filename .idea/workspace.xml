@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3dd47b5-0792-433b-a59c-8db617d35338" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/encryption_decryption.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/LSBSteganography.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Main.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/RC4.py" afterPath="$PROJECT_DIR$/RC4.py" />
-      <change beforePath="$PROJECT_DIR$/Shuffling.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/UI_testing.py" afterPath="$PROJECT_DIR$/UI.py" />
-      <change beforePath="$PROJECT_DIR$/Util.py" afterPath="$PROJECT_DIR$/Util.py" />
-      <change beforePath="$PROJECT_DIR$/calculations.py" afterPath="$PROJECT_DIR$/calculations.py" />
-      <change beforePath="$PROJECT_DIR$/shuffle.py" afterPath="$PROJECT_DIR$/shuffle.py" />
-      <change beforePath="$PROJECT_DIR$/shuffle_sample.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/steganography.py" afterPath="$PROJECT_DIR$/steganography.py" />
-      <change beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
-      <change beforePath="$PROJECT_DIR$/tkinter_colors.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/encryption_decryption.py" afterPath="$PROJECT_DIR$/encryption_decryption.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,8 +37,8 @@
       <file leaf-file-name="encryption_decryption.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/encryption_decryption.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="47" column="53" lean-forward="false" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+            <state relative-caret-position="327">
+              <caret line="58" column="1" lean-forward="false" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -169,10 +156,10 @@
         <option value="$PROJECT_DIR$/steganography.py" />
         <option value="$PROJECT_DIR$/shuffle.py" />
         <option value="$PROJECT_DIR$/RC4.py" />
-        <option value="$PROJECT_DIR$/encryption_decryption.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/calculations.py" />
         <option value="$PROJECT_DIR$/shuffle_sample.py" />
+        <option value="$PROJECT_DIR$/encryption_decryption.py" />
       </list>
     </option>
   </component>
@@ -197,8 +184,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,6 +195,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,7 +218,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.shuffle_sample">
+  <component name="RunManager" selected="Python.UI_testing">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -331,9 +318,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.shuffle_sample" />
-        <item index="1" class="java.lang.String" itemvalue="Python.encryption_decryption" />
-        <item index="2" class="java.lang.String" itemvalue="Python.UI_testing" />
+        <item index="0" class="java.lang.String" itemvalue="Python.UI_testing" />
+        <item index="1" class="java.lang.String" itemvalue="Python.shuffle_sample" />
+        <item index="2" class="java.lang.String" itemvalue="Python.encryption_decryption" />
         <item index="3" class="java.lang.String" itemvalue="Python.Main" />
         <item index="4" class="java.lang.String" itemvalue="Python.tkinter_colors" />
       </list>
@@ -367,10 +354,10 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="813" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.48633093" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.48633093" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32805756" sideWeight="0.4918957" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31058824" sideWeight="0.50277776" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32805756" sideWeight="0.5081043" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32805756" sideWeight="0.5081043" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294964" sideWeight="0.4947146" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32805756" sideWeight="0.49722221" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26074702" sideWeight="0.48633093" order="1" side_tool="false" content_ui="tabs" />
@@ -430,27 +417,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LSBSteganography.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2760">
-          <caret line="186" column="48" lean-forward="false" selection-start-line="186" selection-start-column="48" selection-end-line="186" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LSBSteganography.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2760">
-          <caret line="186" column="48" lean-forward="true" selection-start-line="186" selection-start-column="48" selection-end-line="186" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/LSBSteganography.py" />
+    <entry file="file://$PROJECT_DIR$/Main.py" />
+    <entry file="file://$PROJECT_DIR$/LSBSteganography.py" />
     <entry file="file://$PROJECT_DIR$/Util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1005">
@@ -469,13 +438,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="24" column="26" lean-forward="false" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py" />
     <entry file="file://$PROJECT_DIR$/Util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1005">
@@ -486,13 +449,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LSBSteganography.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3045">
-          <caret line="205" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/LSBSteganography.py" />
     <entry file="file://$PROJECT_DIR$/RC4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -501,20 +458,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LSBSteganography.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py" />
+    <entry file="file://$PROJECT_DIR$/LSBSteganography.py" />
     <entry file="file://$PROJECT_DIR$/RC4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -534,13 +479,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py" />
     <entry file="file://$PROJECT_DIR$/CLM.py" />
     <entry file="file://$PROJECT_DIR$/RC4.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -568,13 +507,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rc4_text.py" />
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py" />
     <entry file="file://$USER_HOME$/Desktop/new/CLM.py" />
     <entry file="file://$USER_HOME$/Desktop/new/Decryption.py" />
     <entry file="file://$USER_HOME$/Desktop/new/Encryption.py" />
@@ -595,36 +528,12 @@
     <entry file="file://$PROJECT_DIR$/rc4_text.py" />
     <entry file="file://$PROJECT_DIR$/sort.py" />
     <entry file="file://$PROJECT_DIR$/shuffle2.py" />
-    <entry file="file://$PROJECT_DIR$/Shuffling.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Shuffling.py" />
     <entry file="file://$USER_HOME$/Downloads/LSB-Steganography-master/LSBSteg.py" />
     <entry file="file://$PROJECT_DIR$/CLM.py" />
-    <entry file="file://$PROJECT_DIR$/LSBSteganography.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tkinter_colors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1038">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="180" column="44" lean-forward="true" selection-start-line="157" selection-start-column="4" selection-end-line="180" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/LSBSteganography.py" />
+    <entry file="file://$PROJECT_DIR$/tkinter_colors.py" />
+    <entry file="file://$PROJECT_DIR$/Main.py" />
     <entry file="file://$PROJECT_DIR$/shuffle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -663,16 +572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/encryption_decryption.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="47" column="53" lean-forward="false" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/calculations.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -681,19 +580,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shuffle_sample.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="63" column="64" lean-forward="false" selection-start-line="63" selection-start-column="64" selection-end-line="63" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/shuffle_sample.py" />
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/encryption_decryption.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="58" column="1" lean-forward="false" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
