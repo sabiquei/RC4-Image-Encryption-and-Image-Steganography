@@ -10,7 +10,7 @@ def get_image(image_path):
 
 def show_image(image, shape, dest_dir=None, name=None):
     img = Image.fromarray((image.reshape(shape)).astype('uint8'), 'RGB')
-    img.show()
+    #img.show()
     img.save(dest_dir + '/' + name + ".png", "PNG")
     print("Image location: ", dest_dir + '/' + name + ".png", "PNG")
 

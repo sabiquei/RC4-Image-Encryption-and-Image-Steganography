@@ -1,10 +1,11 @@
-#RC4 ENCRYPTION ON COLOUR IMAGES
+# Developed by Amith,Adhirath,Akhil,Sabique.
+# RC4 ENCRYPTION AND SHUFFLING ON COLOUR IMAGES
 
 from PIL import Image
 import math
 import Util
 import RC4
-
+import steganography
 
 # Variables
 
@@ -14,6 +15,8 @@ input_img_name = "input_image"
 encrypted_image = "encrypted_image"
 encrypted_image_input_path = "/Users/sabique/Desktop/output/"+encrypted_image+".png"
 decrypted_image = "decrypted"
+stego_name = "/Users/sabique/Desktop/output/stego_image.png"
+decoded_secret = output_dir+"/secret_decoded.png"
 
 def shuffle_unshuffle(input_name):
 
@@ -45,7 +48,7 @@ def shuffle_unshuffle(input_name):
 
     # Saving the shuffled image over encrypted image
     im.save(encrypted_image_input_path)
-    Image._show(im)
+    #Image._show(im)
 
 
 def RC4_Encryption():
@@ -77,8 +80,9 @@ def RC4_Encryption():
     dec_key = Util.get_dec_key(key)
     #print dec_key
 
-    # Generate initial value X0 for the Chaotic Logistic Map
+    # Generate initial value X0
     x0 = Util.get_x0(dec_key)
+    print x0
 
     # Construct X, U, and S Array
     x_array = Util.get_x_array(x0, SYSTEM_PARAMETER)
@@ -102,6 +106,7 @@ def RC4_Encryption():
     # Call Shuffle Function
     print "Shuffling ..."
     shuffle_unshuffle(encrypted_image_input_path)
+    steganography.encode(encrypted_image_input_path, output_dir)
 
 def RC4_Decryption():
 
@@ -109,11 +114,13 @@ def RC4_Decryption():
     # DECRYPTIONSTUFF
     # ---------------
 
+    steganography.decode(stego_name,output_dir)
+
     key = raw_input("Enter the Key : ")
 
     # Unshuffling the shuffled Image
     print "Unshuffling ..."
-    shuffle_unshuffle(encrypted_image_input_path)
+    shuffle_unshuffle(decoded_secret)
 
     #Read Encrypted Image and print details
     image = Util.get_image(image_path=encrypted_image_input_path)
@@ -154,8 +161,8 @@ print "------------------------------\n" \
 option = 0
 
 while(option != 3):
-    print "1.Encrypt Image\n" \
-          "2.Decrypt Encrypted Image\n" \
+    print "1.Encryption Procedure\n" \
+          "2.Decryption Procedure\n" \
           "3.Exit"
 
     option = input("Enter your choice : ")
