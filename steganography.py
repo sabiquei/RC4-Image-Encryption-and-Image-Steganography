@@ -5,20 +5,18 @@ import Util
 
 # Variables
 
-def encode(input_image_path, output_dir):
+def encode(input_image_path, output_dir,cov_image_name):
     print "Encoding..."
 
     # Read Cover Image
-    cover_name = "input_image/"
-    cover_name += raw_input("Enter the cover image name including extension : ")
-    cov_image = Util.get_image(image_path=cover_name)
+    cov_image = Util.get_image(image_path=cov_image_name)
     cov_img_width, cov_img_height = cov_image.shape[:2]
-    print('Image width: %i, height: %i ' % (cov_img_width, cov_img_height))
+    #print('Image width: %i, height: %i ' % (cov_img_width, cov_img_height))
 
     # Read Secret Image
     sec_image = Util.get_image(image_path=input_image_path)
     sec_img_width, sec_img_height = sec_image.shape[:2]
-    print('Image width: %i, height: %i ' % (sec_img_width, sec_img_height))
+    #print('Image width: %i, height: %i ' % (sec_img_width, sec_img_height))
 
     # Get Height and width of secret image in bits
     sec_img_width_bits = format(sec_img_width, "016b")  # convert it in to 16 bit data to store in 2 pixels
@@ -53,7 +51,7 @@ def encode(input_image_path, output_dir):
     # Final length for encoding
     img_bit_stream_length = len(img_bit_stream)
 
-    print img_bit_stream_length
+    #print img_bit_stream_length
 
     stream_pointer = 0
     flag = 1
@@ -107,8 +105,9 @@ def encode(input_image_path, output_dir):
         print "Image not Large enough to hold all the data"
     else:
         Util.show_image(cov_image, shape=cov_image.shape, dest_dir=output_dir, name="stego_image")
+        print "Complete.."
 
-    print stream_pointer
+    #print stream_pointer
 
 
     '''sec_stream_img_data_bits = img_bit_stream
@@ -133,13 +132,13 @@ def encode(input_image_path, output_dir):
     # The expectation is that each pixel value (R,G,B) will be converted to it's binary equivalent and r will be stored in first pixel of cover,g in second and b in third and this pattern repeats until the whole image is done.
     # form the stego_image and then store it as stego image and return the stego image_path
 
-def decode(stego_image_path,output_dir):
+def decode(stego_image_path,output_path):
     print "Decoding....."
 
     # Read Stego Image
     cov_image = Util.get_image(image_path=stego_image_path)
     cov_img_width, cov_img_height = cov_image.shape[:2]
-    print('Image width: %i, height: %i ' % (cov_img_width, cov_img_height))
+    #print('Image width: %i, height: %i ' % (cov_img_width, cov_img_height))
 
 
 
@@ -163,7 +162,7 @@ def decode(stego_image_path,output_dir):
     #print sec_img_width_bits
 
     sec_img_width = int(sec_img_width_bits,2)
-    print sec_img_width
+    #print sec_img_width
 
     # Get secret image binary height
     sec_img_height_bits = ""
@@ -185,7 +184,7 @@ def decode(stego_image_path,output_dir):
     #print sec_img_height_bits
 
     sec_img_height = int(sec_img_height_bits, 2)
-    print sec_img_height
+    #print sec_img_height
 
 
     # Get stream length from the next 32 bits that is 4 pixels
@@ -235,7 +234,6 @@ def decode(stego_image_path,output_dir):
 
 
     # Extracting for the remaining pixels
-    '''Something went wrong here '''
 
     flag = 1
     stream_pointer = len(sec_stream_img_data_bits)
@@ -274,7 +272,6 @@ def decode(stego_image_path,output_dir):
         sec_stream_img_data_bits[i + 6], sec_stream_img_data_bits[i + 7] 
         i += 8 '''
 
-    '''**** SOMTHING WENT WRONG in the above for loops ***'''
     # Image size
     width = sec_img_width
     height = sec_img_height
@@ -315,8 +312,9 @@ def decode(stego_image_path,output_dir):
     #scipy.misc.imshow(img)
 
     # Save the image
-    output_dir += "/secret_decoded.png"
-    scipy.misc.imsave(output_dir, img)
+    output_path += "/encrypted_image.png"
+    scipy.misc.imsave(output_path, img)
+    print"Complete.."
 
 
     # Expects the path of stego image

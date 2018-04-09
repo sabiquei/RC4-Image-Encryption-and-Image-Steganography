@@ -12,7 +12,7 @@ def show_image(image, shape, dest_dir=None, name=None):
     img = Image.fromarray((image.reshape(shape)).astype('uint8'), 'RGB')
     #img.show()
     img.save(dest_dir + '/' + name + ".png", "PNG")
-    print("Image location: ", dest_dir + '/' + name + ".png", "PNG")
+    #print("Image location: ", dest_dir + '/' + name + ".png", "PNG")
 
 def get_x_array(x, sys_param):
     # Returns array X of seemingly random values obtained from CLM function
@@ -46,7 +46,8 @@ def get_dec_key(key):
     #hex_key = str(binascii.hexlify(key), 'ascii')
     hex_key = str(binascii.hexlify(key))
     dec_key = []
-    print("Hexdecimal Key: ", hex_key)
+
+    #print("Hexdecimal Key: ", hex_key)
 
     for _ in range(len(hex_key)):
         dec_key.append(ord(hex_key[_]))

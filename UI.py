@@ -1,6 +1,6 @@
 from Tkinter import *
-#from tkFileDialog import *
 import tkMessageBox
+import encryption_decryption
 
 def info_button_action():
     tkMessageBox.showinfo("Information", "Developed by Amith,Adhirath,Akhil,Sabique\n"
@@ -72,6 +72,34 @@ def encryption_ui():
         window.destroy()
         main_page_ui()
 
+    def encrypt_button_action():
+        message =""
+        secret_image_name = secret_img_name_field.get()
+        if(secret_image_name == ""):
+            message += "Secret Image name Missing"
+        cover_image_name= cover_img_name_field.get()
+        if (cover_image_name == ""):
+            message += "Cover Image name Missing"
+        key = key_name.get()
+        if (key == ""):
+            message += "Key Missing"
+        if(message == ""):
+            message_label.config(state=NORMAL)
+            message_label.delete(0, END)
+            message_label.insert(END,"Starting Encryption Process...")
+            message_label.config(state=DISABLED)
+            encryption_decryption.encryption_procedure(secret_image_name, cover_image_name, key)
+            message_label.config(state=NORMAL)
+            message_label.delete(0, END)
+            message_label.insert(END, "Completed")
+            message_label.config(state=DISABLED)
+
+        else:
+            message_label.config(state=NORMAL)
+            message_label.delete(0, END)
+            message_label.insert(END, message)
+            message_label.config(state=DISABLED)
+
     # Creating Frames inside the root window
     header = Frame(window, width=350, height=40, bg='khaki')
     body = Frame(window, width=350, height=270, bg='white')
@@ -91,32 +119,33 @@ def encryption_ui():
     name.pack()
 
     # Contents in body frame
-    message_label = Label(body, text='')
+    message_label = Entry(body,width=15)
+    message_label.config(state=DISABLED)
 
     secret_img_label = Label(body, text='Input the secret Image name : ')
-    secret_img_name = Entry(body,width=15)
+    secret_img_name_field = Entry(body,width=15)
 
     cover_img_label = Label(body, text='Input the cover Image name : ')
-    cover_img_name = Entry(body, width=15)
+    cover_img_name_field = Entry(body, width=15)
 
     key_label = Label(body, text='Enter the Key for Encryption : ')
     key_name = Entry(body, width=15)
 
-    encryption_button = Button(body, text='ENCRYPT', font='none 10 bold')
+    encryption_button = Button(body, text='ENCRYPT', font='none 10 bold',command=encrypt_button_action)
 
     # Layout for body frame
     message_label.grid(row=0, column=0,columnspan=2,sticky="ew")
 
     secret_img_label.grid(row=1, column=0, sticky=W)
-    secret_img_name.grid(row=1, column =1, sticky=W)
+    secret_img_name_field.grid(row=1, column =1, sticky=W)
 
     cover_img_label.grid(row=2, column=0, sticky = W)
-    cover_img_name.grid(row=2, column =1, sticky = W)
+    cover_img_name_field.grid(row=2, column =1, sticky = W)
 
     key_label.grid(row=3, column=0, sticky=W)
     key_name.grid(row=3, column=1, sticky=W)
 
-    encryption_button.grid(row=3,column =0,columnspan=2,sticky="ew")
+    encryption_button.grid(row=4,column =0,columnspan=2,sticky="ew")
 
 
     # Contents in footer frame
@@ -137,6 +166,31 @@ def decryption_ui():
         window.destroy()
         main_page_ui()
 
+    def decrypt_button_action():
+        message =""
+        stego_image_name = stego_img_name_field.get()
+        if(stego_image_name == ""):
+            message += "Stego Image name Missing"
+        key = key_name.get()
+        if (key == ""):
+            message += "Key Missing"
+        if(message == ""):
+            message_label.config(state=NORMAL)
+            message_label.delete(0, END)
+            message_label.insert(END,"Starting Decryption Process...")
+            message_label.config(state=DISABLED)
+            encryption_decryption.decryption_procedure(stego_image_name,key)
+            message_label.config(state=NORMAL)
+            message_label.delete(0, END)
+            message_label.insert(END, "Completed")
+            message_label.config(state=DISABLED)
+
+        else:
+            message_label.config(state=NORMAL)
+            message_label.delete(0, END)
+            message_label.insert(END, message)
+            message_label.config(state=DISABLED)
+
     # Creating Frames inside the root window
     header = Frame(window, width=350, height=40, bg='khaki')
     body = Frame(window, width=350, height=270, bg='white')
@@ -156,21 +210,21 @@ def decryption_ui():
     name.pack()
 
     # Contents in body frame
-    message_label = Label(body, text='')
+    message_label = Entry(body, width=15)
 
     stego_img_label = Label(body, text='Input the Stego Image name : ')
-    stego_img_name = Entry(body, width=15)
+    stego_img_name_field = Entry(body, width=15)
 
     key_label = Label(body, text='Enter the Key for Encryption : ')
     key_name = Entry(body, width=15)
 
-    decryption_button = Button(body, text='DECRYPT', font='none 10 bold')
+    decryption_button = Button(body, text='DECRYPT', font='none 10 bold',command=decrypt_button_action)
 
     # Layout for body frame
     message_label.grid(row=0, column=0, columnspan=2, sticky="ew")
 
     stego_img_label.grid(row=1, column=0, sticky=W)
-    stego_img_name.grid(row=1, column=1, sticky=W)
+    stego_img_name_field.grid(row=1, column=1, sticky=W)
 
     key_label.grid(row=2, column=0, sticky=W)
     key_name.grid(row=2, column=1, sticky=W)

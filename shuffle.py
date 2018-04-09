@@ -4,6 +4,7 @@ import math
 def shuffle_unshuffle(input_name):
 
     im = Image.open(input_name,"r")
+    print "Shuffling.."
     arr = im.load()  # pixel data stored in this 2D array
 
     def rot(A, n, x1, y1):  # this is the function which rotates a given block
@@ -30,5 +31,6 @@ def shuffle_unshuffle(input_name):
                 rot(arr, BLKSZ + 2 - i, j * (BLKSZ + 2 - i), k * (BLKSZ + 2 - i))
 
     # Saving the shuffled image over encrypted image
-    im.save(encrypted_image_input_path)
+    im.save(input_name)
+    print "Completed.."
     #Image._show(im)
