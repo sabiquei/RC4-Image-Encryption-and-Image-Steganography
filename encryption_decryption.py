@@ -8,7 +8,7 @@ output_path = "/Users/sabique/Desktop/project/output_image"
 encrypted_image_name = "encrypted_image.png"
 stego_image_name = "stego_image.png"
 decrypted_image_name="decrypted_image.png"
-SYSTEM_PARAMETER = 4.0
+decrypted_image_name_without_extension ="decrypted_image"
 
 def encryption_procedure(sec_image_name,cov_image_name,key):
     # Encryption Procedure
@@ -23,7 +23,7 @@ def decryption_procedure(stego_image_name,key):
     stego_image_name = output_path+"/"+stego_image_name
     steganography.decode(stego_image_name,output_path)
     shuffle.shuffle_unshuffle(output_path+"/"+encrypted_image_name)
-    RC4.rc4_decryption(output_path+"/"+encrypted_image_name, key, output_path, decrypted_image_name)
+    RC4.rc4_decryption(output_path+"/"+encrypted_image_name, key, output_path, decrypted_image_name_without_extension)
 
 def run_without_ui():
     print "------------------------------\n" \

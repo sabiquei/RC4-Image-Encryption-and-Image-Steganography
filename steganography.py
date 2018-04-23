@@ -104,7 +104,7 @@ def encode(input_image_path, output_dir,cov_image_name):
     if flag == 1:
         print "Image not Large enough to hold all the data"
     else:
-        Util.show_image(cov_image, shape=cov_image.shape, dest_dir=output_dir, name="stego_image")
+        Util.save_image(cov_image, shape=cov_image.shape, flag = 1, dest_dir=output_dir, name="stego_image")
         print "Complete.."
 
     #print stream_pointer
@@ -309,7 +309,7 @@ def decode(stego_image_path,output_path):
             img[y][x] = pixel
 
     # Display the image
-    #scipy.misc.imshow(img)
+    # scipy.misc.imshow(img)
 
     # Save the image
     output_path += "/encrypted_image.png"

@@ -1,5 +1,6 @@
 from Tkinter import *
 import tkMessageBox
+import calculations
 import encryption_decryption
 
 def info_button_action():
@@ -25,6 +26,10 @@ def main_page_ui():
         window.destroy()
         decryption_ui()
 
+    def compare_button_action():
+        window.destroy()
+        compare_ui()
+
     # Create main window
     window = Tk()
     window.title("IMAGE SECURITY TOOL")
@@ -49,10 +54,12 @@ def main_page_ui():
     # Contents in body frame
     encryption_button = Button(body,text='ENCRYPTION PROCEDURE',font='none 15 bold',command =encryption_button_action)
     decryption_button = Button(body,text='DECRYPTION PROCEDURE',font='none 15 bold',command =decryption_button_action)
+    compare_button = Button(body, text='COMPARE IMAGES', font='none 15 bold', command=compare_button_action)
 
     # Layout for body frame
-    encryption_button.pack(pady = 45)
+    encryption_button.pack(pady = 25)
     decryption_button.pack(pady = 15)
+    compare_button.pack(pady = 25)
 
     # Contents in footer frame
     info_button = Button(footer,highlightbackground='khaki',text='info',font='none 15 bold', command=info_button_action)
@@ -240,6 +247,93 @@ def decryption_ui():
     # Running window
     window.mainloop()
 
+def compare_ui():
+    window = Tk()
+    window.title("IMAGE SECURITY TOOL")
+    window.geometry('400x400')
+
+    def back_button_action():
+        window.destroy()
+        main_page_ui()
+
+    def compare_button_action():
+        message = ""
+        original = original_img_name_field.get()
+        if (original == ""):
+            message += "Original Image name Missing"
+        decrypted = decrypted_img_name_field.get()
+        if (decrypted == ""):
+            message += "Decrypted Image name Missing"
+        if (message == ""):
+            original = "/Users/sabique/Desktop/project/input_image/" + original
+            decrypted = "/Users/sabique/Desktop/project/output_image/" + decrypted
+            message_label.config(state=NORMAL)
+            message_label.delete(0, END)
+            message_label.insert(END, "Calculating...")
+            message_label.config(state=DISABLED)
+            error = calculations.mse(original,decrypted)
+            message_label.config(state=NORMAL)
+            message_label.delete(0, END)
+            message_label.insert(END,error)
+            message_label.config(state=DISABLED)
+
+        else:
+            message_label.config(state=NORMAL)
+            message_label.delete(0, END)
+            message_label.insert(END, message)
+            message_label.config(state=DISABLED)
+
+    # Creating Frames inside the root window
+    header = Frame(window, width=350, height=40, bg='khaki')
+    body = Frame(window, width=350, height=270, bg='white')
+    footer = Frame(window, width=350, height=40, bg='khaki')
+
+    # Layout for all Frames
+    header.pack(side=TOP, fill=X)
+    body.pack(fill=X)
+    footer.pack(side=BOTTOM, fill=X)
+
+    # Contents in top frame
+    back_button = Button(header, text='Go Back', highlightbackground='khaki', command=back_button_action)
+    name = Label(header, text='IMAGE SECURITY TOOL', fg='black', bg='khaki', font='none 20 bold')
+
+    # Layout for top frame
+    back_button.pack(side=LEFT)
+    name.pack()
+
+    # Contents in body frame
+    variation_label = Label(body, text='Variation : ')
+    message_label = Entry(body, width=15)
+
+    original_img_label = Label(body, text='Input the Original Image name : ')
+    original_img_name_field = Entry(body, width=15)
+
+    decrypted_img_label = Label(body, text='Input the Decrypted Image name : ')
+    decrypted_img_name_field = Entry(body, width=15)
+
+    compare_button = Button(body, text='COMPARE', font='none 10 bold', command=compare_button_action)
+
+    # Layout for body frame
+    variation_label.grid(row=0, column=0, columnspan=1, sticky="ew")
+    message_label.grid(row=0, column=1, columnspan=1, sticky="ew")
+
+    original_img_label.grid(row=1, column=0, sticky=W)
+    original_img_name_field.grid(row=1, column=1, sticky=W)
+
+    decrypted_img_label.grid(row=2, column=0, sticky=W)
+    decrypted_img_name_field.grid(row=2, column=1, sticky=W)
+
+    compare_button.grid(row=3, column=0, columnspan=2, sticky="ew")
+
+    # Contents in footer frame
+    info_button = Button(footer, highlightbackground='khaki', text='info', font='none 15 bold',
+                         command=info_button_action)
+
+    # Layout for footer frame
+    info_button.pack(side=RIGHT)
+
+    # Running window
+    window.mainloop()
 
 main_page_ui()
 #encryption_ui()

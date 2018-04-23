@@ -19,7 +19,7 @@ def shuffle_unshuffle(input_name):
 
     xres, yres = im.size
 
-    BLKSZ = 64  # blocksize
+    BLKSZ = 16  # blocksize
 
     for i in range(2, BLKSZ + 1):
         for j in range(int(math.floor(float(xres) / float(i)))):

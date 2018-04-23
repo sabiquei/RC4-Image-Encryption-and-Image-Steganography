@@ -1,11 +1,11 @@
 import Util
-SYSTEM_PARAMETER = 4.0
 
-def initial_perm(s, u):
+def initial_perm(s, k):
     """ Initial permutation of array S using array U. """
     j = 0
+    key_length = len(k)
     for i in range(256):
-        j = (j + s[i] + u[i]) % 256
+        j = (j + s[i] + k[i%key_length]) % 256
         s[i], s[j] = s[j], s[i]
     return s
 
@@ -41,17 +41,14 @@ def rc4_encryption(sec_image_name,key,output_path,encrypted_image_name):
 
     # Convert external key
     dec_key = Util.get_dec_key(key)
-    # print dec_key
+    #print dec_key
 
-    # Generate initial value X0
-    x0 = Util.get_x0(dec_key)
     #print x0
 
-    # Construct X, U, and S Array
-    x_array = Util.get_x_array(x0, SYSTEM_PARAMETER)
-    u_array = Util.get_u_array(x_array, img_width, img_height)
+    # Construct S Array
     s_array = Util.get_s_array()
-    ran_gen = rc4(s_array, u_array)
+
+    ran_gen = rc4(s_array, dec_key)
 
     for i in range(img_width):
         for j in range(img_height):
@@ -64,7 +61,7 @@ def rc4_encryption(sec_image_name,key,output_path,encrypted_image_name):
             blue = (pixel[2] + t) % 256
             image[i, j] = (red, green, blue)
 
-    Util.show_image(image, shape=image.shape, dest_dir=output_path, name="encrypted_image")
+    Util.save_image(image, shape=image.shape, flag = 0, dest_dir=output_path, name="encrypted_image")
     print "Completed"
 
 def rc4_decryption(encrypted_image_name, key, output_path, decrypted_image_name):
@@ -79,12 +76,10 @@ def rc4_decryption(encrypted_image_name, key, output_path, decrypted_image_name)
     dec_key = Util.get_dec_key(key)
     # print dec_key
 
-    x0 = Util.get_x0(dec_key)
-    # Construct X, U, and S Array
-    x_array = Util.get_x_array(x0, SYSTEM_PARAMETER)
-    u_array = Util.get_u_array(x_array, img_width, img_height)
+    # Construct S Array
     s_array = Util.get_s_array()
-    ran_gen = rc4(s_array, u_array)
+
+    ran_gen = rc4(s_array, dec_key)
 
     for i in range(img_width):
         for j in range(img_height):
@@ -97,5 +92,5 @@ def rc4_decryption(encrypted_image_name, key, output_path, decrypted_image_name)
             blue = (pixel[2] + 256 - t) % 256
             image[i, j] = (red, green, blue)
 
-    Util.show_image(image, shape=image.shape, dest_dir=output_path, name=decrypted_image_name)
+    Util.save_image(image, shape=image.shape, flag = 1, dest_dir=output_path, name=decrypted_image_name)
     print "Completed"
